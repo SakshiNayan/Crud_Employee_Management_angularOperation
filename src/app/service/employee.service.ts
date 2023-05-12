@@ -12,4 +12,10 @@ export class EmployeeService {
   getAllEmployee(){
     return this.http.get(this.url);
   }
+  saveEmployeeData(data : any){
+    console.group(data);                                    //data will appear from addEmployee and passing
+    return this.http.post(this.url, data).subscribe((result)=>{
+      console.log(result);
+    })
+  }
 }
